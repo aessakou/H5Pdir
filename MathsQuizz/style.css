@@ -58,6 +58,7 @@ html.h5p-iframe .h5p-content {
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
 	padding: 10px;
+	padding-top: 20px;
 	border-radius: 18px;
 	text-align: center;
 }
@@ -8086,4 +8087,17 @@ button.h5p-retry-button.h5p-retry-button {
 .questionset .h5p-question.h5p-dragquestion .h5p-my-fullscreen-button-enter,
 .questionset .h5p-question.h5p-dragquestion .h5p-my-fullscreen-button-exit {
 	display: none
+}
+
+
+/* Custom css */
+.custom-h5p-title {
+	font-size: 1.5em;
+	font-weight: 700;
+	/* margin-bottom: .5em; */
+	text-align: center;
+	margin-top: 0;
+	border: 2px solid #1356a3;
+	padding: 4px;
+	border-radius: 5px;
 }
