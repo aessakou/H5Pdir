@@ -27,25 +27,31 @@ document.addEventListener("DOMContentLoaded", function () {
 					// Create a new div for the question number
 					const questionNumberDiv = document.createElement("div");
 					questionNumberDiv.className = "question-chapiter-title";
-					questionNumberDiv.innerText = dataa.questions[index].metadata.extraTitle;
-
-
+					questionNumberDiv.innerText =  "Question " + (index + 1) + " : " + dataa.questions[index].metadata.extraTitle;
+					
+					
 					// Insert the question number div at the beginning of the question container
 					question.insertBefore(questionNumberDiv, question.firstChild);
 				});
 			}
 
-			const prevBtn = document.querySelector('[aria-label="Retour"]');
-			const nextBtn = document.querySelector('[aria-label="Suivant"]');
+			const prevBtns = document.querySelectorAll('.h5p-question-prev.h5p-joubelui-button');
+			const nextBtns = document.querySelectorAll('.h5p-question-next.h5p-joubelui-button');
+			var quesIn = 0;
 
 			document.addEventListener("keydown", function (event) {
-				if (event.key === "ArrowLeft" && prevBtn) {
-					prevBtn.click();
+				const grandPn = nextBtns[quesIn]?.parentElement?.parentElement;
+				const grandPp = prevBtns[quesIn - 1]?.parentElement?.parentElement;
+				if (event.key === "ArrowLeft" && prevBtns[quesIn - 1] && grandPp && getComputedStyle(grandPp).display !== "none") {
+					prevBtns[quesIn - 1].click();
+					quesIn--;
 				}
-				if (event.key === "ArrowRight" && nextBtn) {
-					nextBtn.click();
+				if (event.key === "ArrowRight" && nextBtns[quesIn] && grandPn && getComputedStyle(grandPn).display !== "none") {
+					nextBtns[quesIn].click();
+					quesIn++;
 				}
 			});
+
 
 			clearInterval(interval); // stop checking
 		}
