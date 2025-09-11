@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			const firstKey = Object.keys(H5PIntegration.contents)[0];
 			const metadata = H5PIntegration.contents[firstKey].metadata;
 
-			// Example: Insert the metadata.title
 			if (metadata && metadata.title) {
 				if (!container.querySelector(".custom-h5p-title")) {
 					const heading = document.createElement("h2");
@@ -18,17 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 					container.insertBefore(heading, container.firstChild);
 				}
+			}
 
-				// for (const key in dataa) {
-					// 	// if (Object.hasOwnProperty.call(metadata, key)) { // Important for avoiding inherited properties
-					// 	// 	const value = metadata[key];
-					// 	// 	console.log(`${key}: ${value}`);
-					// 	// }
-					// 	console.log(dataa);
-					// }
-					
-					// console.log(dataa["extraTitle"]);
-				}
 			var dataa = H5PIntegration.contents[firstKey].jsonContent;
 			var questions = document.querySelectorAll(".question-container");
 			if (questions && dataa) {
@@ -44,6 +34,18 @@ document.addEventListener("DOMContentLoaded", function () {
 					question.insertBefore(questionNumberDiv, question.firstChild);
 				});
 			}
+
+			const prevBtn = document.querySelector('[aria-label="Retour"]');
+			const nextBtn = document.querySelector('[aria-label="Suivant"]');
+
+			document.addEventListener("keydown", function (event) {
+				if (event.key === "ArrowLeft" && prevBtn) {
+					prevBtn.click();
+				}
+				if (event.key === "ArrowRight" && nextBtn) {
+					nextBtn.click();
+				}
+			});
 
 			clearInterval(interval); // stop checking
 		}
