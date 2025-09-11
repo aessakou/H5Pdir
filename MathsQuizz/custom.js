@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
 				if (!container.querySelector(".custom-h5p-title")) {
 					const heading = document.createElement("h2");
 					heading.className = "custom-h5p-title";
-					heading.innerText = metadata.title;
+					heading.innerText = "Quiz : " + metadata.title;
+					// heading.innerText = metadata.title;
 
 					container.insertBefore(heading, container.firstChild);
 				}
