@@ -32,14 +32,22 @@ document.addEventListener("DOMContentLoaded", function () {
 					
 					// Insert the question number div at the beginning of the question container
 					question.insertBefore(questionNumberDiv, question.firstChild);
+
 				});
 			}
 
 			const prevBtns = document.querySelectorAll('.h5p-question-prev.h5p-joubelui-button');
 			const nextBtns = document.querySelectorAll('.h5p-question-next.h5p-joubelui-button');
-			var quesIn = 0;
-
+			
+			
 			document.addEventListener("keydown", function (event) {
+				var quesIn = 0;
+				for (bttn of nextBtns) {
+					if (getComputedStyle(bttn.parentElement?.parentElement).display !== "none") {
+						break;
+					}
+					quesIn++;
+				}
 				const grandPn = nextBtns[quesIn]?.parentElement?.parentElement;
 				const grandPp = prevBtns[quesIn - 1]?.parentElement?.parentElement;
 				if (event.key === "ArrowLeft" && prevBtns[quesIn - 1] && grandPp && getComputedStyle(grandPp).display !== "none") {

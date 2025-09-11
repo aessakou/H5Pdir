@@ -4952,7 +4952,9 @@ button.h5p-core-cancel-button:hover {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
-	width: 6em
+	width: 6em;
+	width: auto !important;
+	height: 2em;
 }
 
 .h5p-blanks .h5p-text-input:focus {
@@ -8113,10 +8115,11 @@ button.h5p-retry-button.h5p-retry-button {
 	/* margin-bottom: .5em; */
 	text-align: center;
 	margin-top: 0;
-	border: 2px solid #1356a3;
+	border: 2px solid #082647;
 	padding: 10px;
 	border-radius: 12px;
-	background-color: #ddd;
+	background-color: #0e3f77;
+	color: #eee;
 }
 
 .question-chapiter-title {
