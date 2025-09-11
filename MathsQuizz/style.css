@@ -21,7 +21,7 @@ html.h5p-iframe>body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	background-color: gray;
+	background-color: #aaa;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -37,6 +37,7 @@ html.h5p-iframe .h5p-container {
 .h5p-content {
 	position: relative;
 	background: #fefefe;
+	background: #f3f3f3;
 	border: 1px solid #eee;
 	border-bottom: none;
 	box-sizing: border-box;
@@ -4487,7 +4488,10 @@ button.h5p-core-cancel-button:hover {
 /*!@license H5P.Question-1.5/styles/question.css by Joubel licensed under MIT*/
 .h5p-question {
 	background: rgba(255, 255, 255, .9);
-	position: relative
+	background: #9dd8bb;
+	position: relative;
+	padding: 30px;
+	border-radius: 10px;
 }
 
 .h5p-question-audio {
@@ -4693,8 +4697,8 @@ button.h5p-core-cancel-button:hover {
 }
 
 .h5p-question-buttons.has-scorebar {
-	width: calc(100% - 15em - 1px);
-	margin-left: 0
+	/* width: calc(100% - 15em - 1px);
+	margin-left: 0 */
 }
 
 .h5p-question-buttons.has-scorebar.wrap {
@@ -7417,7 +7421,8 @@ a.ui-button:active {
 .h5p-drag-text {
 	position: relative;
 	background: rgba(255, 255, 255, .9);
-	overflow: hidden
+	overflow: hidden;
+	background: #9dd8bb;
 }
 
 .h5p-drag-text .hidden {
@@ -7653,7 +7658,8 @@ a.ui-button:active {
 .h5p-mark-the-words {
 	position: relative;
 	background: rgba(255, 255, 255, .9);
-	overflow: hidden
+	overflow: hidden;
+	background: #9dd8bb;
 }
 
 .h5p-mark-the-words-descriptions {
@@ -8105,7 +8111,7 @@ button.h5p-retry-button.h5p-retry-button {
 	text-align: center;
 	margin-top: 0;
 	border: 2px solid #1356a3;
-	padding: 4px;
-	border-radius: 5px;
+	padding: 10px;
+	border-radius: 12px;
 	background-color: #ddd;
 }
